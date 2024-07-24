@@ -3,13 +3,14 @@ import './index.css';
 import Arrow from './icons/Arrow';
 import { bear, coin, highVoltage, notcoin, rocket, trophy } from './images';
 import ReferralApp from './ReferralApp';
-import Ganar from './Ganar'; // Importa el componente Ganar
+import Ganar from './Ganar';
+import Impulsar from './Impulsar'; // Importa el componente Impulsar
 
 const App = () => {
   const [points, setPoints] = useState(29857775);
   const [energy, setEnergy] = useState(2532);
   const [clicks, setClicks] = useState<{ id: number, x: number, y: number }[]>([]);
-  const [currentView, setCurrentView] = useState<'main' | 'referral' | 'ganar'>('main'); // Añadido 'ganar' al tipo
+  const [currentView, setCurrentView] = useState<'main' | 'referral' | 'ganar' | 'impulsar'>('main'); // Añadido 'impulsar' al tipo
 
   const pointsToAdd = 12;
   const energyToReduce = 12;
@@ -51,6 +52,11 @@ const App = () => {
   // Comprobamos si la vista actual es 'ganar'
   if (currentView === 'ganar') {
     return <Ganar onBack={() => setCurrentView('main')} />; // Renderiza el componente Ganar
+  }
+
+  // Comprobamos si la vista actual es 'impulsar'
+  if (currentView === 'impulsar') {
+    return <Impulsar onBack={() => setCurrentView('main')} />; // Renderiza el componente Impulsar
   }
 
   // Vista principal
@@ -107,7 +113,10 @@ const App = () => {
                   <span>Ganar</span>
                 </button>
                 <div className="h-[48px] w-[2px] bg-[#fddb6d]"></div>
-                <button className="flex flex-col items-center gap-1">
+                <button
+                  className="flex flex-col items-center gap-1"
+                  onClick={() => setCurrentView('impulsar')} // Cambia la vista a 'impulsar' al hacer clic
+                >
                   <img src={rocket} width={24} height={24} alt="Rocket" />
                   <span>Impulsar</span>
                 </button>
