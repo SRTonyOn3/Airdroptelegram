@@ -1,5 +1,3 @@
-# Clon de Notcoin Este repositorio contiene la configuración inicial y la versión final del proyecto de clonación de Notcoin, incluida la estructura básica del proyecto, las imágenes y los íconos necesarios. ## Descripción general Este proyecto es un clon de la popular mini aplicación Telegram, Notcoin. El repositorio proporciona dos ramas: 1. **Configuración inicial**: proporciona la estructura fundamental y los activos necesarios para crear la aplicación completa. 2. **Versión Final**: La aplicación completa con todas las funcionalidades. ## Empezando Para comenzar con la configuración inicial o la versión final, siga estas instrucciones:
-
 ### Cloning the Repository
 
 1. **Clone the Repository**:
